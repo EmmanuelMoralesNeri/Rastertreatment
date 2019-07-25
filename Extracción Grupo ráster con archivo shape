@@ -1,0 +1,5 @@
+rasterfiles <- list.files("C:/Users/monte/Downloads/2019", "*.tif", full.names = TRUE)
+nc = stack(rasterfiles)
+pt = shapefile("C:/Users/monte/Desktop/SHAPEFILES/Estaciones.shp")
+ext = extract(nc, pt)
+write.csv(ext,"C:/Users/monte/Downloads/extracción.csv")
